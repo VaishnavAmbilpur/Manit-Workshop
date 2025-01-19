@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .con{
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column;
+        }
+        p{
+            text-align: center;
+        }
+        .input{
+            text-align: center;
+            background-color: aliceblue;
+
+           border-color: black;
+           height: 50px;
+           width:250px;
+           padding-bottom:100px;
+           padding-left: 100px;
+           padding-right: 100px;
+           border-width: 20px;
+           border-color: brown;
+        }
+        button{
+            background-color: violet;
+            height: 50px;
+            width: 250px;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: darkviolet;
+            box-shadow: 20px;
+        }
+
+    </style>
+</head>
+<script>
+        let l = document.querySelector("input");
+        function generate(){
+            imgqr.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+l; 
+        }
+</script>
+<body>
+    <div class="con">
+      <div class="input">
+         <p>Qr Code generator</p>
+         <input id="in"type="text" placeholder="Enter URL or Text"><br/>
+         <button onclick="generate()">Generater Qr</button>
+      </div>
+      <br/>
+      <div class="qr">
+         <div class="img">
+            <img src="" id="imgqr"><br/>
+         </div>
+      </div>
+    </div>
+</body>
+</html>
